@@ -1,5 +1,8 @@
 # circle.js
-circle.js is a dependency-free JavaScript ES6 circle graph-like component.
+circle.js is a dependency-free JavaScript ES6 circle component.
+All items are aligned in a circle and can be rotated and resized.
+Optionally you can add a connection line to connect each item.
+A perfect module to highlight your key features.
 
 ## Getting started
 
@@ -92,7 +95,6 @@ circle.add(); // Adds a new circle item
 Feel free to contribute to this module.
 
 ## Browser Support
-
  - Chrome
  - Edge
  - Firefox
@@ -110,7 +112,6 @@ Build using NPM scripts. The following scripts are available:
 - Bug: Changing the speed of rotation while rotating loses the current position and jumps to the new calculated position
 
 ## Credits
-
 - [Tobi Demski](https://github.com/tobidemski) - Creator
 - [Contributors](../../contributors)
 
