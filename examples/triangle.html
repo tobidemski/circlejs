@@ -1,0 +1,62 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Circle.js - Triangle</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .my-circle {
+            position: relative;
+        }
+
+            .my-circle .item {
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                background-color: forestgreen;
+                display: inline-flex;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                border: 30px solid blue;
+            }
+
+            .my-circle .connection {
+                position: absolute;
+                border: 2px dashed black;
+            }
+    </style>
+</head>
+
+<body>
+
+    <!-- Add your site or application content here -->
+    <p>Hello world! This is Graph.js Triangle.</p>
+
+    <div class="my-circle">
+        <div class="item">
+        </div>
+        <div class="item">
+        </div>
+        <div class="item">
+        </div>
+        <div class="item">
+        </div>
+        <div class="connections"></div>
+    </div>
+
+    <script type="module">
+        import { Circle } from '/src/index.js';
+        let circle = new Circle('.my-graph');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+# Ignore editor configurations
+.vscode
+.vs
+
+# ignore installed node modules
+node_modules/
+
+# ignore build output
+dist/
