@@ -10,7 +10,7 @@ export default {
     radius: 200,
     startAngle: function (items) { return items.length == 4 ? 'top-left' : 'top'; },
     clockwise: true,
-    center: true,
+    center: null,
     enableRotation: false,
     rotationDuration: 3000,
     includeItemSizeInBackground: false,

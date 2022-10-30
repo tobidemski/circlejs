@@ -110,7 +110,7 @@
     <script type="module">
         import Circle from '/dist/circle.esm.js';
 
-        let circle = new Circle('.example-circle', { startAngle: 'top', clockwise: true, center: 'full-center', radius: getRadius, enableRotation: false });
+        let circle = new Circle('.example-circle', { startAngle: 'top', clockwise: true, center: null, radius: getRadius, enableRotation: false });
 
         var template = (title) => '<div class="bubble"><div class="layer-container"><div class="layer outer-layer"></div><div class="layer middle-layer"></div><div class="layer inner-layer"></div></div><div class="content">' + title + '</div></div>';
 
