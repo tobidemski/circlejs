@@ -73,6 +73,16 @@ circle.on('item.added', function (data) {
 circle.add(); // Adds a new circle item
 ```
 
+#### Result
+
+3 Items
+![show current subscription overview before](images/circlejs-3-items.png?raw=true)
+
+4 Items
+![show current subscription overview before](images/circlejs-4-items.png?raw=true)
+
+5 Items
+![show current subscription overview before](images/circlejs-5-items.png?raw=true)
 
 ## Contributing
 
