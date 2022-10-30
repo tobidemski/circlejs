@@ -1,5 +1,5 @@
 {
-  "name": "circlejs",
+  "name": "@tobidemski/circlejs",
   "version": "0.1.0",
   "description": "circle.js is a dependency-free JavaScript ES6 circle graph-like component.",
   "main": "dist/circle.js",
