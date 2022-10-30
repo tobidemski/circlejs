@@ -100,7 +100,7 @@ Build using NPM scripts. The following scripts are available:
 
 - [Tobi Demski](https://github.com/tobidemski) - Creator
 - [Contributors](../../contributors)
-- 
+
 ## License
 
 Copyright (c) 2022-present, [Tobi Demski](https://www.tobidemski.de/). Licensed under the terms of the [MIT License](https://opensource.org/licenses/MIT).
