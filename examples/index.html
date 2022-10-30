@@ -1,0 +1,83 @@
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .wrapper {
+        margin: 16px;
+    }
+
+    .example-container {
+        display: flex;
+        column-gap: 32px;
+        flex-wrap: wrap;
+    }
+
+    .example {
+        width: 500px;
+        transition: transform 0.5s;
+        -webkit-font-smoothing: subpixel-antialiased;
+        backface-visibility: hidden;
+        margin-bottom: 32px;
+    }
+
+        .example .content {
+            border: 1px dotted #808080;
+            padding: 16px;
+        }
+
+        .example:not(:hover) .desc {
+            display: none;
+        }
+
+        .example .desc {
+            margin-top: 8px;
+            padding-top: 16px;
+            border-top: 1px solid black;
+        }
+
+        .example a {
+            color: black;
+            font-weight: bold;
+        }
+</style>
+
+<div class="wrapper">
+    <h1>circle.js examples</h1>
+
+    <div class="example-container">
+        <div class="example">
+            <div class="content">
+
+                <a href="/simple.html">Simple</a>
+                <div class="desc">
+                    Simple example with 3 items.
+                </div>
+            </div>
+        </div>
+        <div class="example">
+            <div class="content">
+                <a href="/dynamic.html">Dynamic</a>
+                <div class="desc">
+                    Dynamic example with 3 items.<br />
+                    Options available to start / stop rotations or change direction. Resizing radius and angle position for the first item.
+                </div>
+            </div>
+        </div>
+
+        <div class="example">
+            <div class="content">
+                <a href="/rotation.html">Rotation</a>
+                <div class="desc">
+                    Simple example with 3 items with rotation.
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
