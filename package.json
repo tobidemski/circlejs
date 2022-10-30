@@ -1,8 +1,10 @@
 {
   "name": "@tobidemski/circlejs",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "circle.js is a dependency-free JavaScript ES6 circle graph-like component.",
   "main": "dist/circle.js",
+  "module": "dist/circle.esm.js",
+  "unpkg": "dist/circle.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tobidemski/circlejs.git"
@@ -13,6 +15,9 @@
   "keywords": [
     "circle",
     "lightweight"
+  ],
+  "files": [
+    "dist/**"
   ],
   "scripts": {
     "run:examples-server": "node examples-server.js",
