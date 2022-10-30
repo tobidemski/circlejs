@@ -76,6 +76,8 @@ circle.on('item.added', function (data) {
 circle.add(); // Adds a new circle item
 ```
 
+See more in [Wiki](../../wiki)
+
 #### Result
 
 3 Items with connections
