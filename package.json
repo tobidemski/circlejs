@@ -24,7 +24,7 @@
     "build": "npm run build:css && npm run build:js"
   },
   "author": "tobidemski",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.19.1",
     "@babel/preset-env": "^7.19.1",
