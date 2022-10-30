@@ -77,15 +77,15 @@ circle.add(); // Adds a new circle item
 
 3 Items with connections
 
-![show current subscription overview before](images/circlejs-3-items.png?raw=true)
+![3 items result](images/circlejs-3-items.png?raw=true)
 
 4 Items with connections
 
-![show current subscription overview before](images/circlejs-4-items.png?raw=true)
+![4 items result](images/circlejs-4-items.png?raw=true)
 
 5 Items with connections
 
-![show current subscription overview before](images/circlejs-5-items.png?raw=true)
+![5 items result](images/circlejs-5-items.png?raw=true)
 
 ## Contributing
 
