@@ -1,0 +1,120 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Circle.js - Pentagon</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/dist/css/circle.core.css" type="text/css" rel="stylesheet" />
+    <link href="/style.css" type="text/css" rel="stylesheet" />
+
+    <style>
+        .circle__item {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Add your site or application content here -->
+    <p>Hello world! This is Circle.js rotation.</p>
+
+    <div class="wrapper">
+        <div class="circle example-circle">
+            <div class="circle__items">
+                <div class="circle__item">
+                    <div class="bubble">
+                        <div class="layer-container">
+                            <div class="layer outer-layer outer-layer--highlight">
+                            </div>
+                            <div class="layer middle-layer">
+                            </div>
+                            <div class="layer inner-layer">
+                            </div>
+                        </div>
+                        <div class="content">Item 1</div>
+                    </div>
+                </div>
+
+                <div class="circle__item">
+                    <div class="bubble">
+                        <div class="layer-container">
+                            <div class="layer outer-layer outer-layer--highlight">
+                            </div>
+                            <div class="layer middle-layer">
+                            </div>
+                            <div class="layer inner-layer">
+                            </div>
+                        </div>
+                        <div class="content">Item 2</div>
+                    </div>
+                </div>
+
+                <div class="circle__item">
+                    <div class="bubble">
+                        <div class="layer-container">
+                            <div class="layer outer-layer outer-layer--highlight">
+                            </div>
+                            <div class="layer middle-layer">
+                            </div>
+                            <div class="layer inner-layer">
+                            </div>
+                        </div>
+                        <div class="content">Item 3</div>
+                    </div>
+                </div>
+
+                <div class="circle__item">
+                    <div class="bubble">
+                        <div class="layer-container">
+                            <div class="layer outer-layer outer-layer--highlight">
+                            </div>
+                            <div class="layer middle-layer">
+                            </div>
+                            <div class="layer inner-layer">
+                            </div>
+                        </div>
+                        <div class="content">Item 4</div>
+                    </div>
+                </div>
+                
+                <div class="circle__item">
+                    <div class="bubble">
+                        <div class="layer-container">
+                            <div class="layer outer-layer outer-layer--highlight">
+                            </div>
+                            <div class="layer middle-layer">
+                            </div>
+                            <div class="layer inner-layer">
+                            </div>
+                        </div>
+                        <div class="content">Item 5</div>
+                    </div>
+                </div>
+            </div>
+            <div class="circle__connections"></div>
+        </div>
+    </div>
+
+    <label id="totalRotations">
+        Total rotations: 0
+    </label>
+
+    <!--<script src="/dist/circle.js"></script>-->
+    <script type="module">
+        import Circle from '/dist/circle.esm.js';
+        let circle = new Circle('.example-circle', { clockwise: true, center: true, enableRotation: true, rotationDuration: 10000 });
+
+        let rotations = 0;
+        circle.on('rotated', function () {
+            rotations++;
+            document.querySelector('#totalRotations').innerHTML = `Total rotations: ${rotations}`;
+        });
+
+    </script>
+</body>
+
+</html>

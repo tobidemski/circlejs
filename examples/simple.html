@@ -1,0 +1,41 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Circle.js - Dynamic</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="/dist/css/circle.core.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- Add your site or application content here -->
+    <p>Hello world! This is Circle.js Simple.</p>
+
+    <div class="wrapper">
+        <div class="circle example-circle">
+            <div class="circle__items">
+                <div class="circle__item circle__item--center">
+                    Item 1
+                </div>
+                <div class="circle__item circle__item--center">
+                    Item 2
+                </div>
+                <div class="circle__item circle__item--center">
+                    Item 3
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import Circle from '/dist/circle.esm.js';
+
+        new Circle('.example-circle');
+    </script>
+</body>
+
+</html>

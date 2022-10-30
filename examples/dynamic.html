@@ -1,0 +1,260 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Circle.js - Dynamic</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="/dist/css/circle.core.css" type="text/css" rel="stylesheet" />
+    <link href="/style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- Add your site or application content here -->
+    <p>Hello world! This is Circle.js Dynamic.</p>
+
+    <div class="wrapper">
+        <div class="circle example-circle">
+            <div class="circle__items">
+                <div class="circle__item">
+                    <div class="bubble">
+                        <div class="layer-container">
+                            <div class="layer outer-layer outer-layer--highlight">
+                            </div>
+                            <div class="layer middle-layer">
+                            </div>
+                            <div class="layer inner-layer">
+                            </div>
+                        </div>
+                        <div class="content">Item 1</div>
+                    </div>
+                </div>
+                <div class="circle__item">
+                    <div class="bubble">
+                        <div class="layer-container">
+                            <div class="layer outer-layer">
+                            </div>
+                            <div class="layer middle-layer">
+                            </div>
+                            <div class="layer inner-layer">
+                            </div>
+                        </div>
+                        <div class="content">
+                            Item 2
+                        </div>
+                    </div>
+                </div>
+                <div class="circle__item">
+                    <div class="bubble">
+                        <div class="layer-container">
+                            <div class="layer outer-layer">
+                            </div>
+                            <div class="layer middle-layer">
+                            </div>
+                            <div class="layer inner-layer">
+                            </div>
+                        </div>
+                        <div class="content">
+                            Item 3
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="circle__connections"></div>
+            <div class="circle__background"></div>
+        </div>
+    </div>
+
+    <div>
+        <label>Circle items</label>
+        <button id="add">Add</button>
+        <button id="remove">Remove</button>
+    </div>
+    <div>
+        <label>Drawing</label>
+        <button id="reset">Reset</button>
+        <button id="refreshCurrentAngle">Reprint Current</button>
+    </div>
+    <div>
+        <label>Rotation</label>
+
+        <button id="startRotation">Start Rotation</button>
+        <button id="pauseRotation">Pause Rotation</button>
+        <button id="stopRotation">Stop Rotation</button>
+        <button id="changeRotationDirection">Change Rotation Direction</button>
+
+        <label>Change rotation duration</label>
+        <input type="text" id="txtChangeDuration" value="10000" />
+        <button id="changeDuration">Change duration</button>
+    </div>
+
+    <div>
+        <label>Angle</label>
+        <input type="text" id="txtDeg" value="45" />
+        <button id="rotate">Rotate</button>
+    </div>
+
+    <div>
+        <label>Radius</label>
+        <input type="text" id="txtRadius" value="100" />
+        <button id="radius">Set radius</button>
+        <button id="resetRadius">Reset radius</button>
+    </div>
+
+    <!-- Optionally include with umd js -->
+    <!--<script src="/dist/circle.js"></script>-->
+
+    <script type="module">
+        import Circle from '/dist/circle.esm.js';
+
+        let circle = new Circle('.example-circle', { startAngle: 'top', clockwise: true, center: 'full-center', radius: getRadius, enableRotation: false });
+
+        var template = (title) => '<div class="bubble"><div class="layer-container"><div class="layer outer-layer"></div><div class="layer middle-layer"></div><div class="layer inner-layer"></div></div><div class="content">' + title + '</div></div>';
+
+        circle.on('item.added', function (data) {
+            console.log(data.item);
+
+            var content = createElementFromHTML(template('Item ' + data.length));
+
+            data.item.appendChild(content);
+        });
+
+        circle.on('rotated.360', function () {
+            console.log('rotated full');
+        });
+
+        circle.on('rotated.180', function () {
+            console.log('rotated 180');
+        });
+
+        var btnChangeDuration = document.querySelector('#changeDuration');
+
+        btnChangeDuration.addEventListener('click', function () {
+            let txtDuration = document.querySelector('#txtChangeDuration');
+            circle.changeRotationDuration(txtDuration.value);
+        });
+
+        var btnChangeRotationDirection = document.querySelector('#changeRotationDirection');
+        let clockwise = true;
+        btnChangeRotationDirection.addEventListener('click', function () {
+            clockwise = !clockwise;
+            circle.changeRotationDirection(clockwise);
+        });
+        
+
+
+        var btnAdd = document.querySelector('#add');
+
+        btnAdd.addEventListener('click', function () {
+            circle.add();
+        });
+
+        var btnReset = document.querySelector('#reset');
+
+        btnReset.addEventListener('click', function () {
+            circle.reset();
+        });
+
+        var btnRefreshCurrentAngle = document.querySelector('#refreshCurrentAngle');
+
+        btnRefreshCurrentAngle.addEventListener('click', function () {
+            circle.refresh();
+        });
+
+        var btnStartRotation = document.querySelector('#startRotation');
+
+        btnStartRotation.addEventListener('click', function () {
+            circle.startRotation();
+        });
+
+        var btnPauseRotation = document.querySelector('#pauseRotation');
+
+        btnPauseRotation.addEventListener('click', function () {
+            circle.pauseRotation();
+        });
+
+        var btnStopRotation = document.querySelector('#stopRotation');
+
+        btnStopRotation.addEventListener('click', function () {
+            circle.stopRotation();
+        });
+
+        var btnRemove = document.querySelector('#remove');
+
+        btnRemove.addEventListener('click', function () {
+
+            circle.remove();
+        });
+
+        var btnRadius = document.querySelector('#radius');
+
+        btnRadius.addEventListener('click', function () {
+
+            var txtRadius = document.querySelector('#txtRadius');
+            circle.setRadius(txtRadius.value);
+        });
+
+        var btnResetRadius = document.querySelector('#resetRadius');
+
+        btnResetRadius.addEventListener('click', function () {
+
+            circle.resetRadius();
+        });
+
+        var btnRotate = document.querySelector('#rotate');
+
+        btnRotate.addEventListener('click', function () {
+            var txtDeg = document.querySelector('#txtDeg');
+            circle.rotate(txtDeg.value);
+        });
+
+        function getRadius(items) {
+
+            if (window.matchMedia('(max-width: 1023px)').matches) {
+                return 105;
+            }
+
+            return 230;
+        }
+
+        let rad = 100;
+        let forward = true;
+
+        function animateRadiusResize() {
+            window.setInterval(function () {
+                circle.setRadius(rad);
+                circle.startRotation();
+
+                if (rad >= 200) {
+                    forward = false;
+                }
+
+                if (forward) {
+                    rad++;
+                }
+                else {
+                    rad--;
+                }
+
+                if (rad <= 100) {
+                    forward = true;
+                }
+            }, 30);
+        }
+
+        //animateRadiusResize();
+
+        function createElementFromHTML(htmlString) {
+            var div = document.createElement('div');
+            div.innerHTML = htmlString.trim();
+
+            // Change this to div.childNodes to support multiple top-level nodes.
+            return div.firstChild;
+        }
+    </script>
+</body>
+
+</html>
